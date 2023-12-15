@@ -1,0 +1,15 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  .app-container {
+    > div {
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 2px solid blue;
+    }
+  }
+}
