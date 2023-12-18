@@ -3,9 +3,10 @@ import "./step.scss"
 
 interface StepProps {
   currentStep: number
+  currentSelectionIndexes: number[]
 }
 
-const Step = ({ currentStep }: StepProps) => {
+const Step = ({ currentStep, currentSelectionIndexes }: StepProps) => {
   const getStepStyling = (stepIndex: number): React.CSSProperties => {
     if (currentStep === stepIndex) {
       return { backgroundColor: "yellow" }
