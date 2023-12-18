@@ -10,11 +10,22 @@ export const STEP_NAMES = ["1", "2", "3", "4", "5"]
 function App() {
   const [currentStep, setCurrentStep] = useState<number>(0)
 
+  const [currentSelectionIndexes, setCurrentSelectionIndexes] = useState<
+    number[]
+  >([])
+
   return (
     <div className="app-container">
-      <Step currentStep={currentStep} />
-      <CurrentConfiguration />
-      <BuilderOptions />
+      <Step
+        currentStep={currentStep}
+        currentSelectionIndexes={currentSelectionIndexes}
+      />
+      <CurrentConfiguration currentSelectionIndexes={currentSelectionIndexes} />
+      <BuilderOptions
+        currentStep={currentStep}
+        currentSelectionIndexes={currentSelectionIndexes}
+        setCurrentSelectionIndexes={setCurrentSelectionIndexes}
+      />
       <Navigation currentStep={currentStep} setCurrentStep={setCurrentStep} />
     </div>
   )
