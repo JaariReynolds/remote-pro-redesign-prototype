@@ -1,3 +1,5 @@
+@use "./constants";
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -9,17 +11,24 @@
       margin: 1rem;
       padding: 1rem;
       border-radius: 1rem;
-      border: 2px solid blue;
+      border: 0.25rem solid constants.$secondary-colour;
+      box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.8);
     }
   }
 }
 
 button {
-  border: none;
+  background-color: constants.$secondary-colour;
+  border: 0.25rem solid transparent;
   transition: background-color 0.1s ease-in-out;
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+  &:hover:enabled {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 0.25rem solid constants.$secondary-colour;
     cursor: pointer;
+  }
+
+  &:hover:disabled {
+    cursor: not-allowed;
   }
 }
