@@ -33,19 +33,19 @@ const BuilderOptions = ({
     setCurrentSelectionIndexes(newSelection)
   }
 
+  function isSelected(index: number) {
+    if (currentSelectionIndexes[currentStep] === index) return "selected"
+
+    return ""
+  }
+
   return (
     <div className="builder-options-container">
       {currentOptions.map((builderOption, index) => (
         <button
-          className="builder-option"
+          className={`builder-option ${isSelected(index)}`}
           onClick={() => handleCurrentSelectionChange(index)}
           key={index}
-          style={{
-            border:
-              currentSelectionIndexes[currentStep] === index
-                ? "2px solid orange"
-                : "",
-          }}
         >
           <FontAwesomeIcon icon={builderOption.icon} className="builder-icon" />
           <div className="builder-title">{builderOption.icon.iconName}</div>
