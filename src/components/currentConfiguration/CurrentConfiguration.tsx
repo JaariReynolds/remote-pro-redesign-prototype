@@ -33,9 +33,8 @@ const CurrentConfiguration = ({
   return (
     <div className="current-configuration-container">
       {currentConfiguration.map((builderOption, index) => (
-        <div key={index}>
+        <div key={index} className="builder-option">
           <FontAwesomeIcon icon={builderOption.icon} />
-          <div>{builderOption.icon.iconName}</div>
         </div>
       ))}
     </div>

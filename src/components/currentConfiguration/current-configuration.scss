@@ -1,4 +1,13 @@
 .current-configuration-container {
-  color: green;
   height: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  place-items: center;
+
+  .builder-option {
+    flex-basis: 8rem;
+    font-size: 5rem;
+  }
 }
