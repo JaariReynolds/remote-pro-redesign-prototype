@@ -16,6 +16,7 @@ function App() {
     <div className="app-container">
       <Step
         currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
         currentSelectionIndexes={currentSelectionIndexes}
       />
       <CurrentConfiguration currentSelectionIndexes={currentSelectionIndexes} />
