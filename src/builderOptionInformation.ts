@@ -122,11 +122,7 @@ const step4Options: BuilderOption[] = [
     description: "description 4",
     icon: faFrog,
   },
-  {
-    associatedStep: 3,
-    description: "description 4",
-    icon: faDove,
-  },
+
   {
     associatedStep: 3,
     description: "description 4",
