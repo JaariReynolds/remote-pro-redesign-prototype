@@ -1,25 +1,38 @@
+import { Dispatch, SetStateAction } from "react"
 import { builderOptionsArray } from "../../builderOptionInformation"
 import "./step.scss"
 
 interface StepProps {
   currentStep: number
+  setCurrentStep: Dispatch<SetStateAction<number>>
   currentSelectionIndexes: number[]
 }
 
-const Step = ({ currentStep, currentSelectionIndexes }: StepProps) => {
-  const getStepStyling = (stepIndex: number): React.CSSProperties => {
-    if (currentStep === stepIndex) {
-      return { backgroundColor: "yellow" }
+const Step = ({
+  currentStep,
+  setCurrentStep,
+  currentSelectionIndexes,
+}: StepProps) => {
+  function getStepStyling(stepIndex: number) {
+    if (currentStep === stepIndex && currentSelectionIndexes[stepIndex] >= 0) {
+      return "current complete"
+    } else if (currentStep === stepIndex) {
+      return "current"
+    } else if (currentSelectionIndexes[stepIndex] >= 0) {
+      return "complete"
     }
-    return { backgroundColor: "blue" }
   }
 
   return (
     <div className="step-container">
       {builderOptionsArray.map((step, index) => (
-        <div className="step" key={index} style={getStepStyling(index)}>
+        <button
+          className={`step ${getStepStyling(index)}`}
+          key={index}
+          onClick={() => setCurrentStep(index)}
+        >
           {index + 1}
-        </div>
+        </button>
       ))}
     </div>
   )
