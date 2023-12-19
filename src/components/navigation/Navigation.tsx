@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react"
-import { STEP_NAMES } from "../../App"
 import "./navigation.scss"
+import { builderOptionsArray } from "../../builderOptionInformation"
 
 interface NavigationProps {
   currentStep: number
@@ -15,7 +15,7 @@ const Navigation = ({ currentStep, setCurrentStep }: NavigationProps) => {
   }
 
   const handleNextStep = () => {
-    if (currentStep === STEP_NAMES.length - 1) return
+    if (currentStep === builderOptionsArray.length - 1) return
 
     setCurrentStep((prevStep) => prevStep + 1)
   }
@@ -29,7 +29,7 @@ const Navigation = ({ currentStep, setCurrentStep }: NavigationProps) => {
         Back
       </button>
       <button className="nav-button" onClick={handleNextStep}>
-        {currentStep < STEP_NAMES.length - 1 ? "Next" : "Search"}
+        {currentStep < builderOptionsArray.length - 1 ? "Next" : "Search"}
       </button>
     </div>
   )

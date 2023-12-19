@@ -1,4 +1,4 @@
-import { STEP_NAMES } from "../../App"
+import { builderOptionsArray } from "../../builderOptionInformation"
 import "./step.scss"
 
 interface StepProps {
@@ -16,9 +16,9 @@ const Step = ({ currentStep, currentSelectionIndexes }: StepProps) => {
 
   return (
     <div className="step-container">
-      {STEP_NAMES.map((step, index) => (
+      {builderOptionsArray.map((step, index) => (
         <div className="step" key={index} style={getStepStyling(index)}>
-          {step}
+          {index + 1}
         </div>
       ))}
     </div>
