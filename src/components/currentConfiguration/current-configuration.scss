@@ -1,13 +1,26 @@
+@use "../../constants";
 .current-configuration-container {
-  height: 20rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1rem;
-  place-items: center;
+  padding: 0rem !important;
 
-  .builder-option {
-    flex-basis: 8rem;
-    font-size: 5rem;
+  .current-configuration-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 0rem;
+    border-bottom: 0.25rem solid constants.$secondary-colour;
+  }
+
+  .flex-box-container {
+    padding: 1rem;
+    display: flex;
+    min-height: 8rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    place-items: center;
+
+    .builder-option {
+      flex-basis: 8rem;
+      font-size: 5rem;
+    }
   }
 }

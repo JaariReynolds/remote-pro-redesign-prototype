@@ -17,12 +17,12 @@ const CurrentConfiguration = ({
     BuilderOption[]
   >([])
 
+  // get the builderOptions for each step based on the indexes
   useEffect(() => {
-    // get the builderOptions for each step based on the indexes
     const newBuilderOptions = currentSelectionIndexes
       .map((selectedIndex, arrayIndex) => {
+        // -1 predefined as an "unselection" i.e. no builder option selected
         if (selectedIndex !== -1)
-          // -1 predefined as an "unselection" i.e. no builder option selected
           return builderOptionsArray[arrayIndex][selectedIndex]
       })
       .filter((item) => item !== undefined) as BuilderOption[]
@@ -32,11 +32,14 @@ const CurrentConfiguration = ({
 
   return (
     <div className="current-configuration-container">
-      {currentConfiguration.map((builderOption, index) => (
-        <div key={index} className="builder-option">
-          <FontAwesomeIcon icon={builderOption.icon} />
-        </div>
-      ))}
+      <div className="current-configuration-title">Current Configuration</div>
+      <div className="flex-box-container">
+        {currentConfiguration.map((builderOption, index) => (
+          <div key={index} className="builder-option">
+            <FontAwesomeIcon icon={builderOption.icon} />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
