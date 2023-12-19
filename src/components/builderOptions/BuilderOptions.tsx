@@ -48,7 +48,7 @@ const BuilderOptions = ({
           }}
         >
           <FontAwesomeIcon icon={builderOption.icon} className="builder-icon" />
-          <div className="builder-title">{builderOption.title}</div>
+          <div className="builder-title">{builderOption.icon.iconName}</div>
         </button>
       ))}
     </div>
