@@ -1,6 +1,7 @@
 .builder-options-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 1rem;
 
   .builder-option {
@@ -9,8 +10,9 @@
     place-items: center;
     border: 2px solid blue;
     border-radius: 1rem;
-    width: 100%;
     height: 8rem;
+    flex-basis: 8rem;
+    flex-grow: 1;
 
     .builder-icon {
       font-size: 3rem;
