@@ -4,8 +4,12 @@
   justify-content: space-between;
 
   .nav-button {
-    width: 4rem;
+    width: 7rem;
     border-radius: 0.5rem;
     outline: none;
+
+    .nav-icon {
+      font-size: 1.5rem;
+    }
   }
 }

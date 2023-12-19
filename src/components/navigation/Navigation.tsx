@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction } from "react"
 import "./navigation.scss"
 import { builderOptionsArray } from "../../builderOptionInformation"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 interface NavigationProps {
   currentStep: number
@@ -26,10 +28,14 @@ const Navigation = ({ currentStep, setCurrentStep }: NavigationProps) => {
         onClick={handlePreviousStep}
         disabled={currentStep === 0}
       >
-        Back
+        <FontAwesomeIcon icon={faArrowLeft} className="nav-icon" />
       </button>
       <button className="nav-button" onClick={handleNextStep}>
-        {currentStep < builderOptionsArray.length - 1 ? "Next" : "Search"}
+        {currentStep < builderOptionsArray.length - 1 ? (
+          <FontAwesomeIcon icon={faArrowRight} className="nav-icon" />
+        ) : (
+          "Search"
+        )}
       </button>
     </div>
   )
