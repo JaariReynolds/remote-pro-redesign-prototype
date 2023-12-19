@@ -12,25 +12,24 @@ interface NavigationProps {
 const Navigation = ({ currentStep, setCurrentStep }: NavigationProps) => {
   const handlePreviousStep = () => {
     if (currentStep === 0) return
-
     setCurrentStep((prevStep) => prevStep - 1)
   }
 
   const handleNextStep = () => {
     if (currentStep === builderOptionsArray.length - 1) return
-
     setCurrentStep((prevStep) => prevStep + 1)
   }
   return (
     <div className="navigation-container">
       <button
+        title="back"
         className="nav-button"
         onClick={handlePreviousStep}
         disabled={currentStep === 0}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="nav-icon" />
       </button>
-      <button className="nav-button" onClick={handleNextStep}>
+      <button title="next" className="nav-button" onClick={handleNextStep}>
         {currentStep < builderOptionsArray.length - 1 ? (
           <FontAwesomeIcon icon={faArrowRight} className="nav-icon" />
         ) : (
