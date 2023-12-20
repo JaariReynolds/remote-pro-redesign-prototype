@@ -5,9 +5,10 @@ import CurrentConfiguration from "./components/currentConfiguration/CurrentConfi
 import Navigation from "./components/navigation/Navigation"
 import Step from "./components/step/Step"
 
+export const COMPONENT_OPACITY_DELAY = 200
+
 function App() {
   const [currentStep, setCurrentStep] = useState<number>(0)
-
   const [currentSelectionIndexes, setCurrentSelectionIndexes] = useState<
     number[]
   >([])

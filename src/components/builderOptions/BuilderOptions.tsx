@@ -1,10 +1,11 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import {
   BuilderOption,
   builderOptionsArray,
 } from "../../builderOptionInformation"
 import "./builder-options.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { COMPONENT_OPACITY_DELAY } from "../../App"
 
 interface BuilderOptionsProps {
   currentStep: number
@@ -30,7 +31,7 @@ const BuilderOptions = ({
     setTimeout(() => {
       setCurrentOptions(builderOptionsArray[currentStep])
       setComponentOpacity(1)
-    }, 200)
+    }, COMPONENT_OPACITY_DELAY)
   }, [currentStep])
 
   function handleCurrentSelectionChange(selectionIndex: number) {
