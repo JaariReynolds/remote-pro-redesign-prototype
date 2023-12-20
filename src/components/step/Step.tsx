@@ -25,7 +25,7 @@ const Step = ({
 
   return (
     <div className="step-container">
-      {builderOptionsArray.map((step, index) => (
+      {builderOptionsArray.map((_, index) => (
         <button
           className={`step ${getStepStyling(index)}`}
           key={index}

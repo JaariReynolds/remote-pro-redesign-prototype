@@ -2,7 +2,6 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import {
   faBuilding,
   faCow,
-  faDove,
   faEnvelope,
   faEnvelopeOpen,
   faEnvelopeOpenText,
