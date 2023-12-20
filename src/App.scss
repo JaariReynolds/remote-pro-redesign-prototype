@@ -18,18 +18,25 @@
 }
 
 button {
+  color: constants.$primary-colour;
   background-color: constants.$secondary-colour;
   border: 0.25rem solid;
   border-color: transparent;
-  transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out, border-color 0.15s ease-in-out,
+    color 0.15s ease-in-out, padding-bottom 0.15s ease-in-out,
+    font-size 0.1s ease-in-out;
 
   &:hover:enabled {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-color: constants.$secondary-colour;
+    background-color: constants.$primary-colour;
+    color: constants.$background-colour;
     cursor: pointer;
   }
 
   &:hover:disabled {
     cursor: not-allowed;
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 }
