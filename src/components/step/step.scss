@@ -14,6 +14,10 @@
     width: 3.5rem;
     font-size: 1.25rem;
 
+    &:hover {
+      font-size: 1.5rem;
+    }
+
     &.current {
       background-color: constants.$primary-colour;
       color: constants.$background-colour;

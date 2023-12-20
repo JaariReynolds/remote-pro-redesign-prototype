@@ -16,6 +16,10 @@
       flex-basis: 8rem;
       flex-grow: 1;
 
+      &:hover {
+        padding-bottom: 0.5rem;
+      }
+
       &.selected {
         border: 0.25rem solid constants.$accent-colour;
       }
