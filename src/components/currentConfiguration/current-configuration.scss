@@ -17,6 +17,7 @@
     justify-content: space-around;
     gap: 1rem;
     place-items: center;
+    transition: opacity 0.15s ease-in-out;
 
     .builder-option {
       flex-basis: 8rem;
